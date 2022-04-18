@@ -1,0 +1,1 @@
+// начало работы с Mongo database
