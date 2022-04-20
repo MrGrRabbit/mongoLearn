@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 
 const express = require("express");
-const { Db } = require("mongodb");
 
 const app = express();
 const port = 3000;
@@ -44,7 +42,6 @@ app.get("/", (request, response) => {
 });
 
 app.listen(port, () => console.log(`server start, port: ${port}`));
-=======
 
 const express = require("express");
 const { Db } = require("mongodb");
@@ -80,5 +77,4 @@ app.get("/", (request, response) => {
 });
 
 app.listen(port, () => console.log(`server start, port: ${port}`));
->>>>>>> a05871dc687d2387c6754291ed6addec9cb647a0
 */
