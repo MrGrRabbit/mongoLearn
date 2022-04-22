@@ -1,7 +1,7 @@
 
-const express = require("express");
+//const express = require("express");
 
-const app = express();
+//const app = express();
 const port = 3000;
 
 const MongoClient = require("mongodb").MongoClient;
@@ -31,9 +31,37 @@ mongoClient.connect(function(err, client){
         }
 
         console.log(`В коллекции users ${result} документов`);
+
+
+    });
+
+    // добавление объектов - метод insertOne()
+    let user = {name: "Tom", age: 23};
+    collection.insertOne(user, (err, result) => {
+        if (err) {
+
+            return console.log("Ошибка: " + message.err);
+        }
+
+        console.log(result);
+        console.log(user);  
+    });
+
+    // adding objects - method insertMany()
+    let users = [{name: "Bob", age: 34}, {name: "Angela", age: 24}, {name: "Tom", age: 21}];
+
+    collection.insertMany(users, (err, result) => {
+        if (err) {
+
+            return console.log("Ошибка: " + message.err);
+        }
+
+        console.log(result);
+        console.log(user);  
         client.close();
         console.log("Подключение закрыто!");
     });
+
 });
 
 /*
